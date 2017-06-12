@@ -1,6 +1,6 @@
 # Image-Art-Drag-and-Drop
 
-<img width="900" src="img/image-art.png" border="0" />
+<img width="900" src="Dnd_1/img/image-art.png" border="0" />
 
 ## About
 This project is Image Drag n drop.
@@ -14,9 +14,6 @@ $ git clone https://github.com/Big-Silver/Image-Art-Drag-and-Drop.git Image-Art-
 # change directory to your app
 $ cd Image-Art-Drag-and-Drop
 
-# install the dependencies with npm
-$ npm install
+# Run each index.html
 
-# start the server
-$ npm start
 ```
