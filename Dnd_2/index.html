@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head> 
+        <title>Image - Drag and Drop</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#dvSource img").draggable({
+                    revert: "invalid",
+                    refreshPositions: true,
+                    drag: function (event, ui) {
+                        ui.helper.addClass("draggable");
+                    },
+                    stop: function (event, ui) {
+                        ui.helper.removeClass("draggable");
+                        var image = this.src.split("/")[this.src.split("/").length - 1];
+                    }
+                });
+                $("#dvDest").droppable({
+                    accept: "img",
+                    drop: function (event, ui) {
+                        if ($("#dvDest img").length == 0) {
+                            $("#dvDest").html("");
+                        }
+                        ui.draggable.addClass("dropped");
+                        $("#dvDest").append(ui.draggable);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>  
+        <div class="container">
+            <div id="dvSource">
+                <img alt="" src="img/1.png" />
+                <img alt="" src="img/2.png" />
+                <img alt="" src="img/3.png" />
+                <img alt="" src="img/4.png" />
+                <img alt="" src="img/5.png" />
+                <img alt="" src="img/6.png" />
+                <img alt="" src="img/7.png" />
+                <img alt="" src="img/8.png" />
+            </div>
+            <hr />
+            <div id="dvDest">
+                Drop here
+            </div> 
+        </div>        
+    </body>
+</html>
