@@ -1,6 +1,6 @@
 # Image-Art-Drag-and-Drop
 
-<img width="900" src="Dnd_1/img/image-art.png" border="0" />
+<img width="900" src="DnD_1/img/image-art.png" border="0" />
 
 ## About
 This project is Image Drag n drop.
